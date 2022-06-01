@@ -1,0 +1,18 @@
+.container{
+    background: rgb(224, 224, 224);
+    margin: 0 20px 0 20px;
+    margin-top: 0 !important;
+    height: 100px;
+    padding: 50px;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+}
+
+span{
+    font-size: 15 px
+}
+

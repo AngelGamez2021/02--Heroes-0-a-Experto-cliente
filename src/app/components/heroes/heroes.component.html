@@ -1,0 +1,17 @@
+<div class="container animated fadeIn ">
+    <div *ngFor="let heroe of heroes; let i = index" class="card">
+        <img src="{{heroe.img}}">
+        <div>
+            <h4>{{heroe.nombre}}</h4>
+            <p>{{heroe.bio}}</p>
+          
+          
+          
+            <button (click)="verHeroe(i)">ver mas...</button>
+       
+       
+        </div>
+    </div>
+</div> 
+
+
