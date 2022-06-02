@@ -1,0 +1,25 @@
+<h1>
+  Buscando a: <small>{{ termino }}</small>
+</h1>
+<hr />
+
+<!-- se muestra el mensaje si la busqueda es igual a 0.. -->
+<div *ngIf="heroes.length == 0">
+  <div>No existe resultados con el tèrmino: {{ termino }}</div>
+</div>
+
+<div class="container animated fadeIn">
+  <app-card-heroes
+  *ngFor="let heroe of heroes; let i = index"
+  
+  [cardHeroe]="heroe"
+  [index]="i"
+
+  (heroeSeleccionado)="verHeroe($event)"
+  
+
+
+  > </app-card-heroes>
+</div>
+
+

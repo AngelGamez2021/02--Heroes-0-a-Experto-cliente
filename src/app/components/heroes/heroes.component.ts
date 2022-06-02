@@ -24,9 +24,7 @@ heroes:Heroe[] = [];
   }
 
   verHeroe(idx: number){
-  
     this.route.navigate(['/heroe', idx])
-
   }
 
 }

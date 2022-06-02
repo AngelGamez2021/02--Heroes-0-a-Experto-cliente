@@ -1,0 +1,28 @@
+.card {
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 350px;
+}
+
+img {
+  margin-left: 27% !important;
+
+  border-radius: 12px;
+  margin: 10px;
+  width: 200px;
+}
+
+h4,
+p {
+  margin: 10px;
+  text-align: center;
+}
+
+button {
+  margin-top: 30px;
+  display: block;
+}

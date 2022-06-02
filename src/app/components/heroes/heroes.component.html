@@ -1,17 +1,13 @@
-<div class="container animated fadeIn ">
-    <div *ngFor="let heroe of heroes; let i = index" class="card">
-        <img src="{{heroe.img}}">
-        <div>
-            <h4>{{heroe.nombre}}</h4>
-            <p>{{heroe.bio}}</p>
-          
-          
-          
-            <button (click)="verHeroe(i)">ver mas...</button>
-       
-       
-        </div>
-    </div>
-</div> 
+<h1>Comics Heros <small>Marvel y DC</small></h1>
 
+<div class="container animated fadeIn">
+  <app-card-heroes
+  *ngFor="let heroe of heroes; let i = index"
 
+  [cardHeroe]="heroe"
+  [index]="i"
+  
+  (heroeSeleccionado)="verHeroe($event)"
+
+  ></app-card-heroes>
+</div>

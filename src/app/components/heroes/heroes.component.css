@@ -1,43 +1,5 @@
- .container {
-  right: 0;
-  left: 0;
+.container {
   display: grid;
-  grid-template-columns: 0.8fr 0.8fr 0.8fr 0.8fr;
+  grid-template-columns: 0.8fr 0.8fr 0.8fr;
   border-radius: 5px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-  width: 85%;
-  justify-content: space-between;
-}
-
-.card {
-  padding: 20px;
-  margin: 5px;
-}
-
-img {
-  margin: 10px;
-  width: 200px;
-}
-
-h4,
-p {
-  margin: 10px;
-  text-align: center;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  margin: 0;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  background: linear-gradient(72deg, rgb(90, 90, 255), rgb(172, 172, 172));
-  cursor: pointer;
-}
-
-button:hover {
-  background: linear-gradient(72deg, rgb(44, 44, 255), rgb(172, 172, 172));
-} 
-
-
+  }

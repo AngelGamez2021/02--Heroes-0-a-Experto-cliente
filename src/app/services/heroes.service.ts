@@ -5,20 +5,20 @@ import { Injectable } from '@angular/core';
 })
 export class HeroesService {
 
-  private heroes:Heroe[] =[
+  private heroes: Heroe[] = [
     {
       nombre: "Aquaman",
       bio: "El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, la cual puede convocar a grandes distancias.",
       img: "assets/img/aquaman.png",
       aparicion: "1941-11-01",
-      casa:"DC"
+      casa: "DC"
     },
     {
       nombre: "Batman",
       bio: "Los rasgos principales de Batman se resumen en «destreza física, habilidades deductivas y obsesión». La mayor parte de las características básicas de los cómics han variado por las diferentes interpretaciones que le han dado al personaje.",
       img: "assets/img/batman.png",
       aparicion: "1939-05-01",
-      casa:"DC"
+      casa: "DC"
     },
     {
       nombre: "Daredevil",
@@ -32,7 +32,7 @@ export class HeroesService {
       bio: "Su principal poder es su capacidad de aumentar su fuerza hasta niveles prácticamente ilimitados a la vez que aumenta su furia. Dependiendo de qué personalidad de Hulk esté al mando en ese momento (el Hulk Banner es el más débil, pero lo compensa con su inteligencia).",
       img: "assets/img/hulk.png",
       aparicion: "1962-05-01",
-      casa:"Marvel"
+      casa: "Marvel"
     },
     {
       nombre: "Linterna Verde",
@@ -56,32 +56,69 @@ export class HeroesService {
       casa: "Marvel"
     }
   ];
-  
-  
+
+
   constructor() {
 
     console.log('kwjendkjnwedjk');
 
-   }
+  }
 
-getHeroes()
-{
-  return this.heroes;
+  getHeroes() {
+    return this.heroes;
+  }
+
+  getHereo(idx: number) {
+    return this.heroes[idx]
+  }
+
+  //filtado sin id, asigna siempre la posicion 0, al momento de ver mas, siempre saldrá aquaman por eso se hace un mejorado
+
+  //   filterHeroes(termino: string): Heroe[] {
+
+  //     let newArrHeroes: Heroe[] = [];
+  //     termino = termino.toLocaleLowerCase();
+  //     this.heroes.forEach((heroe) => {
+  //       let nombre = heroe.nombre.toLocaleLowerCase();
+  //       //  indexOf permite buscar un string dentro del nombre
+  //       if (nombre.indexOf(termino) >= 0) {
+  //         newArrHeroes.push(heroe)
+  //       }
+  //     })
+  //     return newArrHeroes;
+  //   }
+  // }
+
+
+  filterHeroes(termino: string): Heroe[] {
+
+    let newArrHeroes: Heroe[] = [];
+    termino = termino.toLocaleLowerCase();
+    this.heroes.forEach((heroe, index) => {
+
+      let superHeroe = this.heroes[index]
+      let nombre = heroe.nombre.toLocaleLowerCase();
+
+      //  indexOf permite buscar un string dentro del nombre
+      if (nombre.indexOf(termino) >= 0) {
+        heroe.id = index;
+        newArrHeroes.push(heroe)
+
+      }
+    })
+    return newArrHeroes;
+  }
 }
 
-getHereo(idx: number){
-  return this.heroes[idx]
-}
-
-
-}
 
 
 
+//esto debe estar en su propio ts de interfaces..
 export interface Heroe {
   nombre: string,
   bio: string,
   img: string,
   aparicion: string,
   casa: string,
+  id?: number,
 }

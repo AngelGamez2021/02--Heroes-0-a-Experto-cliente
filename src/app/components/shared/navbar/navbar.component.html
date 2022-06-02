@@ -9,10 +9,18 @@
             <button routerLink="/about" routerLinkActive="active" id="about">About</button>
 
 
+
         </div>
         <div class="search">
-            <input class="search" type="search" placeholder="Search">
-            <button class="btnSearch">Search</button>
+            <input class="search" type="search" placeholder="Search"
+            (keyup.enter)="buscarHeroe(searchHeroe.value)" #searchHeroe>
+            
+            <!-- (keyup.enter) para cuando las personas presionen el enter -->
+            <!-- con la referencia #searchHeroe, pasando como parametro de la funcion, obtendremos el valor de la caja del input  -->
+           
+            <button (click)="buscarHeroe(searchHeroe.value)" 
+            type="button" class="btnSearch">Search</button>
+            <!-- le pasamos la misma funcion para que sirva tambien con el boton -->
         </div>
     </div>
-</div>
+</div>  

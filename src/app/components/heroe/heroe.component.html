@@ -3,13 +3,25 @@
     <div class="card" >
         <img [src]="heroe.img" >
         <ul>
-            <li> {{heroe.nombre}} </li>
+            <li> {{heroe.nombre | uppercase }} </li>
             <li> {{heroe.bio}} </li>
-            <li> {{heroe.aparicion}} </li>
+            <li> {{heroe.aparicion | date:'y'}} </li>
             <li> {{heroe.casa}} </li>
-
-            <button routerLink="/heroes">Volver</button>
+            <button class="verMas" routerLink="/heroes">Volver</button>
            
         </ul>
     </div>
 </div>
+
+
+<!-- pipes
+currecy = $
+date = fecha (date: 'y') solo muestra el año
+uppercase = mayus
+json = te convierte todo a json
+limitTo =
+lowercase = todo en minuscula
+async = 
+decima = 
+percent =
+-->

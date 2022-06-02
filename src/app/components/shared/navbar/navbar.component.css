@@ -44,7 +44,10 @@ opacity: calc(0.5px);
 .search{
     border-radius: 5px;
     height: 25px;
-    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+
+   
 }
 
 .btnSearch{
